@@ -1,0 +1,9 @@
+dependencies:
+ - name: monacoEditor
+   version: 0.55.1
+   src: htmlwidgets
+   stylesheet:
+      - monacoEditor.css
+   script:
+      - lib/monaco/package/min/vs/loader.js
+      - lib/createMonacoEditor.js

@@ -1,0 +1,18 @@
+dependencies:
+ - name: aceEditor
+   version: 1.43.6
+   src: htmlwidgets
+   stylesheet:
+      - aceEditor.css
+      - lib/aceSpellChecker.css
+   script:
+      - lib/ace/ace.js
+      - lib/ace/ext-diff.js
+      - lib/ace/ext-statusbar.js
+      - lib/ace/ext-settings_menu.js
+      - lib/ace/ext-language_tools.js
+      - lib/dictionaries/typo.js
+      - lib/dictionaries/en_US/en_US-aff.js
+      - lib/dictionaries/en_US/en_US-dic.js
+      - lib/createAceEditor.js
+      - lib/aceSpellChecker.js

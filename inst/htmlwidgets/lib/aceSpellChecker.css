@@ -1,0 +1,12 @@
+/* Make red underline for gutter and words.*/
+.ace_marker-layer .misspelled {
+   position: absolute;
+   z-index: -2;
+   border-bottom: 2px solid red;
+   margin-bottom: -1px;
+}
+
+.misspelled {
+   border-bottom: 1px solid red;
+   margin-bottom: -1px;
+}

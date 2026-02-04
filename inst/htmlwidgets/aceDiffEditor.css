@@ -1,0 +1,8 @@
+.diff-editor-divider {
+   background: #F0F8FF;
+   cursor: col-resize;
+}
+
+.diff-editor-divider:hover {
+   background: #ADD8E6;
+}
