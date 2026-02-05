@@ -9,9 +9,12 @@ setAceOptions(outputId, options, session = shiny::getDefaultReactiveDomain())
 \arguments{
 \item{outputId}{\link{character}: The id of the editor}
 
-\item{options}{\link{list}: Editor options. Refer to \verb{https://ace.c9.io/api/interfaces/ace.Ace.EditorOptions.html}}
+\item{options}{\link{list}: Editor options. Refer to \url{https://ace.c9.io/api/interfaces/ace.Ace.EditorOptions.html}}
 
 \item{session}{\link{environment}: The Shiny session object (from the server function of the Shiny app).}
+}
+\value{
+No return value, called for side effects
 }
 \description{
 Set options to aceEditor

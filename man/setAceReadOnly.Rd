@@ -13,6 +13,9 @@ setAceReadOnly(outputId, readOnly, session = shiny::getDefaultReactiveDomain())
 
 \item{session}{\link{environment}: The Shiny session object (from the server function of the Shiny app).}
 }
+\value{
+No return value, called for side effects
+}
 \description{
 If readOnly is true, then the editor is set to read-only mode, and none of the content can change.
 }

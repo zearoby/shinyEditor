@@ -12,7 +12,7 @@
 #' @param sessionB
 #'    [environment]: The Shiny session object for the second editor (from the server function of the Shiny app).
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|
-#' @returns NULL
+#' @returns No return value, called for side effects
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|
 #' @examples
 #' if(interactive()){
@@ -55,7 +55,7 @@ createAceDiffView <- function(editorAId, editorBId, sessionA = shiny::getDefault
 #' @param session
 #'    [environment]: The Shiny session object for the editor (from the server function of the Shiny app).
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|
-#' @returns NULL
+#' @returns No return value, called for side effects
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|
 #' @examples
 #' if(interactive()){
@@ -99,7 +99,7 @@ removeAceDiffView <- function(outputId, session = shiny::getDefaultReactiveDomai
 #' @param session
 #'    [environment]: The Shiny session object for the editor (from the server function of the Shiny app).
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|
-#' @returns NULL
+#' @returns No return value, called for side effects
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|
 #' @examples
 #' if(interactive()){
@@ -170,7 +170,7 @@ appendAceCompleter <- function(outputId, id, completer, session = shiny::getDefa
 #' @param session
 #'    [environment]: The Shiny session object for the editor (from the server function of the Shiny app).
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|
-#' @returns NULL
+#' @returns No return value, called for side effects
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|
 #' @examples
 #' if(interactive()){
@@ -211,7 +211,7 @@ removeAceCompleter <- function(outputId, id, session = shiny::getDefaultReactive
 #' @param session
 #'    [environment]: The Shiny session object for the editor (from the server function of the Shiny app).
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|
-#' @returns NULL
+#' @returns No return value, called for side effects
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|
 #' @examples
 #' if(interactive()){
@@ -256,7 +256,7 @@ setAceEnableSpellCheck <- function(outputId, enable = TRUE, session = shiny::get
 #' @param session
 #'    [environment]: The Shiny session object (from the server function of the Shiny app).
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|
-#' @returns NULL
+#' @returns No return value, called for side effects
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|
 #' @examples
 #' if(interactive()){
@@ -298,7 +298,7 @@ setAceValue <- function(outputId, value, clearChangedHistory = FALSE, session = 
 #' @param session
 #'    [environment]: The Shiny session object (from the server function of the Shiny app).
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|
-#' @returns NULL
+#' @returns No return value, called for side effects
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|
 #' @examples
 #' if(interactive()){
@@ -336,7 +336,7 @@ setAceMode <- function(outputId, mode, session = shiny::getDefaultReactiveDomain
 #' @param session
 #'    [environment]: The Shiny session object (from the server function of the Shiny app).
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|
-#' @returns NULL
+#' @returns No return value, called for side effects
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|
 #' @examples
 #' if(interactive()){
@@ -374,7 +374,7 @@ setAceTheme <- function(outputId, theme, session = shiny::getDefaultReactiveDoma
 #' @param session
 #'    [environment]: The Shiny session object (from the server function of the Shiny app).
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|
-#' @returns NULL
+#' @returns No return value, called for side effects
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|
 #' @examples
 #' if(interactive()){
@@ -412,7 +412,7 @@ setAceLineNumbersVisible <- function(outputId, visible, session = shiny::getDefa
 #' @param session
 #'    [environment]: The Shiny session object (from the server function of the Shiny app).
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|
-#' @returns NULL
+#' @returns No return value, called for side effects
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|
 #' @examples
 #' if(interactive()){
@@ -449,7 +449,7 @@ setAceShowInvisibles <- function(outputId, visible, session = shiny::getDefaultR
 #' @param session
 #'    [environment]: The Shiny session object (from the server function of the Shiny app).
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|
-#' @returns NULL
+#' @returns No return value, called for side effects
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|
 #' @examples
 #' if(interactive()){
@@ -492,7 +492,7 @@ setAceEnableAutocompletion <- function(outputId, enable, session = shiny::getDef
 #' @param session
 #'    [environment]: The Shiny session object (from the server function of the Shiny app).
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|
-#' @returns NULL
+#' @returns No return value, called for side effects
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|
 #' @examples
 #' if(interactive()){
@@ -529,7 +529,7 @@ setAceNewLineMode <- function(outputId, newLineMode, session = shiny::getDefault
 #' @param session
 #'    [environment]: The Shiny session object (from the server function of the Shiny app).
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|
-#' @returns NULL
+#' @returns No return value, called for side effects
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|
 #' @examples
 #' if(interactive()){
@@ -566,7 +566,7 @@ setAceReadOnly <- function(outputId, readOnly, session = shiny::getDefaultReacti
 #' @param session
 #'    [environment]: The Shiny session object (from the server function of the Shiny app).
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|
-#' @returns NULL
+#' @returns No return value, called for side effects
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|
 #' @examples
 #' if(interactive()){
@@ -604,7 +604,7 @@ setAceStatusBarVisible <- function(outputId, visible, session = shiny::getDefaul
 #' @param session
 #'    [environment]: The Shiny session object (from the server function of the Shiny app).
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|
-#' @returns NULL
+#' @returns No return value, called for side effects
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|
 #' @examples
 #' if(interactive()){
@@ -631,19 +631,19 @@ setAceHighlightActiveLine <- function(outputId, visible, session = shiny::getDef
 
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|
 #' @description
-#'    Set option to aceEditor
+#'    Set an option to aceEditor
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|
 # Function Arguments:
 #' @param outputId
 #'    [character]: The id of the editor
 #' @param name
-#'    [character]: Option name. Refer to `https://ace.c9.io/api/interfaces/ace.Ace.EditorOptions.html`
+#'    [character]: Option name. Refer to \url{https://ace.c9.io/api/interfaces/ace.Ace.EditorOptions.html}
 #' @param value
-#'    [character], [integer], [logical]: Option value. Refer to `https://ace.c9.io/api/interfaces/ace.Ace.EditorOptions.html`
+#'    [character], [integer], [logical]: Option value. Refer to \url{https://ace.c9.io/api/interfaces/ace.Ace.EditorOptions.html}
 #' @param session
 #'    [environment]: The Shiny session object (from the server function of the Shiny app).
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|
-#' @returns NULL
+#' @returns No return value, called for side effects
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|
 #' @examples
 #' if(interactive()){
@@ -653,7 +653,7 @@ setAceHighlightActiveLine <- function(outputId, visible, session = shiny::getDef
 #' @export setAceOption
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|
 #' @name   setAceOption
-#' @title  Set option to aceEditor
+#' @title  Set an option to aceEditor
 #' @rdname setAceOption
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|
 
@@ -662,7 +662,7 @@ setAceOption <- function(outputId, name, value, session = shiny::getDefaultReact
    shinyjs::runjs(
       paste0(
          "const editor = ace.edit('", session$ns(outputId), "');",
-         "editor.setOption(name = '", name, "', value = ", value, ");"
+         "editor.setOption(name = '", name, "', value = ", jsonlite::toJSON(value, auto_unbox = TRUE), ");"
       )
    )
 }
@@ -676,11 +676,11 @@ setAceOption <- function(outputId, name, value, session = shiny::getDefaultReact
 #' @param outputId
 #'    [character]: The id of the editor
 #' @param options
-#'    [list]: Editor options. Refer to `https://ace.c9.io/api/interfaces/ace.Ace.EditorOptions.html`
+#'    [list]: Editor options. Refer to \url{https://ace.c9.io/api/interfaces/ace.Ace.EditorOptions.html}
 #' @param session
 #'    [environment]: The Shiny session object (from the server function of the Shiny app).
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|
-#' @returns NULL
+#' @returns No return value, called for side effects
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|
 #' @examples
 #' if(interactive()){

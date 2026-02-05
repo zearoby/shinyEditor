@@ -13,6 +13,9 @@ removeAceCompleter(outputId, id, session = shiny::getDefaultReactiveDomain())
 
 \item{session}{\link{environment}: The Shiny session object for the editor (from the server function of the Shiny app).}
 }
+\value{
+No return value, called for side effects
+}
 \description{
 Remove completer in editor.completers. Please refer to \url{https://ace.c9.io/api/interfaces/ace.Ace.Completer.html}
 }

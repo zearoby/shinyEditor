@@ -13,6 +13,9 @@ setAceTheme(outputId, theme, session = shiny::getDefaultReactiveDomain())
 
 \item{session}{\link{environment}: The Shiny session object (from the server function of the Shiny app).}
 }
+\value{
+No return value, called for side effects
+}
 \description{
 Set a new theme for the editor. theme should exist, like \code{ace/theme/github}
 }

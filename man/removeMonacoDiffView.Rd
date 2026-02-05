@@ -9,6 +9,9 @@ removeMonacoDiffView(elementId)
 \arguments{
 \item{elementId}{\link{character}: The element id of the monacoDiffEditor}
 }
+\value{
+No return value, called for side effects
+}
 \description{
 Remove monaco diff view for exist editors
 }

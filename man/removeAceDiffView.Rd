@@ -11,6 +11,9 @@ removeAceDiffView(outputId, session = shiny::getDefaultReactiveDomain())
 
 \item{session}{\link{environment}: The Shiny session object for the editor (from the server function of the Shiny app).}
 }
+\value{
+No return value, called for side effects
+}
 \description{
 Remove ace diff view for exist editors
 }

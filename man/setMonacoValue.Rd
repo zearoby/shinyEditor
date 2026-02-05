@@ -20,6 +20,9 @@ setMonacoValue(
 
 \item{session}{\link{environment}: The Shiny session object (from the server function of the Shiny app).}
 }
+\value{
+No return value, called for side effects
+}
 \description{
 Replace all the lines in the current Document with the value of text.
 }

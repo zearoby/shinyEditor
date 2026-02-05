@@ -23,6 +23,9 @@ createMonacoDiffView(
 
 \item{sessionB}{\link{environment}: The Shiny session object for the second editor (from the server function of the Shiny app)}
 }
+\value{
+No return value, called for side effects
+}
 \description{
 Create monaco diff view for exist editors in an exist widget
 }

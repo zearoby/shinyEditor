@@ -17,6 +17,9 @@ setAceStatusBarVisible(
 
 \item{session}{\link{environment}: The Shiny session object (from the server function of the Shiny app).}
 }
+\value{
+No return value, called for side effects
+}
 \description{
 Show or hide the statusBar of aceEditor
 }

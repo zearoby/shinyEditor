@@ -9,6 +9,9 @@ setMonacoTheme(theme)
 \arguments{
 \item{theme}{\link{character}: The theme of the monacoEditor}
 }
+\value{
+No return value, called for side effects
+}
 \description{
 Set a new theme for the editor. theme should exist, like \code{vs-dark}
 }

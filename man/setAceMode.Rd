@@ -13,6 +13,9 @@ setAceMode(outputId, mode, session = shiny::getDefaultReactiveDomain())
 
 \item{session}{\link{environment}: The Shiny session object (from the server function of the Shiny app).}
 }
+\value{
+No return value, called for side effects
+}
 \description{
 Set a new mode for the EditSession.
 }

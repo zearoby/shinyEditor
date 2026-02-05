@@ -11,13 +11,12 @@ getMonacoSelectedText(outputId, session = shiny::getDefaultReactiveDomain())
 
 \item{session}{\link{environment}: The Shiny session object (from the server function of the Shiny app).}
 }
+\value{
+Character of selected text
+}
 \description{
 Get selected text in monacoEditor
 }
-\section{Character of selected text}{
-NA
-}
-
 \examples{
 if(interactive()){
     shinyEditor::getMonacoSelectedText(outputId = "editor")

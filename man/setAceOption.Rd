@@ -2,7 +2,7 @@
 % Please edit documentation in R/shiny-ace.R
 \name{setAceOption}
 \alias{setAceOption}
-\title{Set option to aceEditor}
+\title{Set an option to aceEditor}
 \usage{
 setAceOption(
   outputId,
@@ -14,14 +14,17 @@ setAceOption(
 \arguments{
 \item{outputId}{\link{character}: The id of the editor}
 
-\item{name}{\link{character}: Option name. Refer to \verb{https://ace.c9.io/api/interfaces/ace.Ace.EditorOptions.html}}
+\item{name}{\link{character}: Option name. Refer to \url{https://ace.c9.io/api/interfaces/ace.Ace.EditorOptions.html}}
 
-\item{value}{\link{character}, \link{integer}, \link{logical}: Option value. Refer to \verb{https://ace.c9.io/api/interfaces/ace.Ace.EditorOptions.html}}
+\item{value}{\link{character}, \link{integer}, \link{logical}: Option value. Refer to \url{https://ace.c9.io/api/interfaces/ace.Ace.EditorOptions.html}}
 
 \item{session}{\link{environment}: The Shiny session object (from the server function of the Shiny app).}
 }
+\value{
+No return value, called for side effects
+}
 \description{
-Set option to aceEditor
+Set an option to aceEditor
 }
 \examples{
 if(interactive()){

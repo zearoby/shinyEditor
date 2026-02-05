@@ -11,13 +11,12 @@ onMonacoEditorReady(outputId, session = shiny::getDefaultReactiveDomain())
 
 \item{session}{\link{environment}: The Shiny session object (from the server function of the Shiny app).}
 }
+\value{
+\code{TRUE}
+}
 \description{
 Fires upon monacoEditor initialisation
 }
-\section{\code{TRUE}}{
-NA
-}
-
 \examples{
 if(interactive()){
     shinyEditor::onMonacoEditorReady(outputId = "editor")

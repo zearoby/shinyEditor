@@ -14,7 +14,7 @@
 #' @param sessionB
 #'    [environment]: The Shiny session object for the second editor (from the server function of the Shiny app)
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|
-#' @returns NULL
+#' @returns No return value, called for side effects
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|
 #' @examples
 #' if(interactive()){
@@ -62,7 +62,7 @@ createMonacoDiffView <- function(editorAId, editorBId, elementId, sessionA = shi
 #' @param elementId
 #'    [character]: The element id of the monacoDiffEditor
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|
-#' @returns NULL
+#' @returns No return value, called for side effects
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|
 #' @examples
 #' if(interactive()){
@@ -92,6 +92,45 @@ removeMonacoDiffView <- function(elementId) {
 
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|
 #' @description
+#'    Update an option to monacoEditor
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|
+# Function Arguments:
+#' @param outputId
+#'    [character]: The id of the editor
+#' @param name
+#'    [character]: Option name. Refer to \url{https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.editor.IEditorOptions.html}
+#' @param value
+#'    [character], [integer], [logical]: Option value. Refer to \url{https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.editor.IEditorOptions.html}
+#' @param session
+#'    [environment]: The Shiny session object (from the server function of the Shiny app).
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|
+#' @returns No return value, called for side effects
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|
+#' @examples
+#' if(interactive()){
+#'     shinyEditor::updateMonacoOption(outputId = "editor", name = "tabSize", value = 3)
+#' }
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|
+#' @export updateMonacoOption
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|
+#' @name   updateMonacoOption
+#' @title  Update an option to monacoEditor
+#' @rdname updateMonacoOption
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|
+
+updateMonacoOption <- function(outputId, name, value, session = shiny::getDefaultReactiveDomain()) {
+   check_output_id(outputId)
+   shinyjs::runjs(
+      paste0(
+         "const editor = getMonacoEditor('", session$ns(outputId), "');",
+         "editor.updateOptions({", jsonlite::toJSON(name, auto_unbox = TRUE),":", jsonlite::toJSON(value, auto_unbox = TRUE), "});"
+      )
+   )
+}
+
+
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|
+#' @description
 #'    Update options to monacoEditor
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|
 # Function Arguments:
@@ -102,7 +141,7 @@ removeMonacoDiffView <- function(elementId) {
 #' @param session
 #'    [environment]: The Shiny session object (from the server function of the Shiny app).
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|
-#' @returns NULL
+#' @returns No return value, called for side effects
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|
 #' @examples
 #' if(interactive()){
@@ -136,7 +175,7 @@ updateMonacoOptions <- function(outputId, options, session = shiny::getDefaultRe
 #' @param theme
 #'    [character]: The theme of the monacoEditor
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|
-#' @returns NULL
+#' @returns No return value, called for side effects
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|
 #' @examples
 #' if(interactive()){
@@ -172,7 +211,7 @@ setMonacoTheme <- function(theme) {
 #' @param session
 #'    [environment]: The Shiny session object (from the server function of the Shiny app).
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|
-#' @returns NULL
+#' @returns No return value, called for side effects
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|
 #' @examples
 #' if(interactive()){
@@ -211,7 +250,7 @@ setMonacoLanguage <- function(outputId, language, session = shiny::getDefaultRea
 #' @param session
 #'    [environment]: The Shiny session object (from the server function of the Shiny app).
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|
-#' @returns NULL
+#' @returns No return value, called for side effects
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|
 #' @examples
 #' if(interactive()){
@@ -258,7 +297,7 @@ setMonacoValue <- function(outputId, value, clearChangedHistory = FALSE, session
 #' @param session
 #'    [environment]: The Shiny session object (from the server function of the Shiny app).
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|
-#' @section Character of editor text
+#' @returns Character of editor text
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|
 #' @examples
 #' if(interactive()){
@@ -357,7 +396,7 @@ getMonacoSelectionRange <- function(outputId, session = shiny::getDefaultReactiv
 #' @param session
 #'    [environment]: The Shiny session object (from the server function of the Shiny app).
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|
-#' @section Character of selected text
+#' @returns Character of selected text
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|
 #' @examples
 #' if(interactive()){
@@ -388,7 +427,7 @@ getMonacoSelectedText <- function(outputId, session = shiny::getDefaultReactiveD
 #' @param session
 #'    [environment]: The Shiny session object (from the server function of the Shiny app).
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|
-#' @section `TRUE`
+#' @returns `TRUE`
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|
 #' @examples
 #' if(interactive()){

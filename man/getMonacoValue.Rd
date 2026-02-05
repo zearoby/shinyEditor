@@ -11,13 +11,12 @@ getMonacoValue(outputId, session = shiny::getDefaultReactiveDomain())
 
 \item{session}{\link{environment}: The Shiny session object (from the server function of the Shiny app).}
 }
+\value{
+Character of editor text
+}
 \description{
 Get value in monacoEditor
 }
-\section{Character of editor text}{
-NA
-}
-
 \examples{
 if(interactive()){
     shinyEditor::getMonacoValue(outputId = "editor")
