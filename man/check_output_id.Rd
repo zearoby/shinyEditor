@@ -12,8 +12,3 @@ check_output_id(outputId)
 \description{
 Check outputId is character and exist in shiny session
 }
-\examples{
-if(interactive()){
-    check_output_id("table_id")
-}
-}
