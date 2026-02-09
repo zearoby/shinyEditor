@@ -92,6 +92,49 @@ removeMonacoDiffView <- function(elementId) {
 
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|
 #' @description
+#'    Enable or disable spell check
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|
+# Function Arguments:
+#' @param outputId
+#'    [character]: The id of the editor
+#' @param enable
+#'    [logical]: Set spell check TRUE or FALSE
+#' @param session
+#'    [environment]: The Shiny session object for the editor (from the server function of the Shiny app).
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|
+#' @returns No return value, called for side effects
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|
+#' @examples
+#' if(interactive()){
+#'     shinyEditor::setMonacoEnableSpellCheck(outputId = "editor", enable = TRUE)
+#' }
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|
+#' @export setMonacoEnableSpellCheck
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|
+#' @name   setMonacoEnableSpellCheck
+#' @title  Enable or disable spell check
+#' @rdname setMonacoEnableSpellCheck
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|
+
+setMonacoEnableSpellCheck <- function(outputId, enable = TRUE, session = shiny::getDefaultReactiveDomain()) {
+   check_output_id(outputId)
+   if (length(enable) != 1 || !enable %in% c(TRUE, FALSE)) stop("`enable` must be TRUE or FALSE")
+   shinyjs::runjs(
+      paste0(
+         "const editor = getMonacoEditor('", session$ns(outputId), "');",
+         "if (", tolower(enable), " == true) {",
+         "   editor.spellChecker.enableSpellCheck();",
+         "}",
+         "else {",
+         "   editor.spellChecker.disableSpellCheck();",
+         "}"
+      )
+   )
+}
+
+
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|
+#' @description
 #'    Update an option to monacoEditor
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|
 # Function Arguments:

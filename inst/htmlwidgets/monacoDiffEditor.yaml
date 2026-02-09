@@ -4,6 +4,11 @@ dependencies:
    src: htmlwidgets
    stylesheet:
       - monacoEditor.css
+      - lib/spellChecker.css
    script:
       - lib/monaco/package/min/vs/loader.js
+      - lib/dictionaries/typo.js
+      - lib/dictionaries/en_US/en_US-aff.js
+      - lib/dictionaries/en_US/en_US-dic.js
+      - lib/monacoSpellChecker.js
       - lib/createMonacoEditor.js

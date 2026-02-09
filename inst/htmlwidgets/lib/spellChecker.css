@@ -10,3 +10,8 @@
    border-bottom: 1px solid red;
    margin-bottom: -1px;
 }
+
+.monaco_misspelled {
+   border-bottom: 2px solid red;
+   margin-bottom: -1px;
+}

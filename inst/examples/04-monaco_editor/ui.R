@@ -1,12 +1,21 @@
+# define UI for application that demonstrates a simple monaco editor
 library(shiny)
 library(shinyjs)
 library(shinyEditor)
 
 shinyUI(
    shiny::fluidPage(
-      style = "height: 100vh; display: flex; padding: 0; flex-direction: column;",
+      style = "padding: 0; height: 100vh; display: flex; flex-direction: column;",
       shinyjs::useShinyjs(),
-      shinyEditor::monacoEditorOutput("editor1", height = "50%"),
-      shinyEditor::monacoEditorOutput("editor2", height = "50%")
+      htmltools::div(
+         # shiny::actionButton("appendCompleter", "Append Completer"),
+         # shiny::actionButton("removeCompleter", "Remove Completer"),
+         shiny::actionButton("enableSpellCheck", "Enable Spell Check"),
+         shiny::actionButton("disableSpellCheck", "Disable Spell Check"),
+         shiny::actionButton("lighttheme", "Light Theme"),
+         shiny::actionButton("darktheme", "Dark Theme")
+      ),
+      shinyEditor::monacoEditorOutput("editor", height = "calc(100% - 34px)")
+
    )
 )

@@ -5,6 +5,8 @@
 # Function Arguments:
 #' @param value
 #'    [character]: Set text to editor when initializing
+#' @param enableSpellCheck
+#'    [logical]: Enable check typo of spelling
 #' @param fontFamily
 #'    [character]: The font family
 #' @param fontSize
@@ -61,6 +63,7 @@
 
 monacoEditor <- function(
    value,
+   enableSpellCheck = FALSE,
    fontFamily = "Consolas",
    fontSize = 16,
    insertSpaces = TRUE,
@@ -90,6 +93,7 @@ monacoEditor <- function(
    # forward options using x
    x = list(
       value = value,
+      enableSpellCheck = enableSpellCheck,
       fontFamily = fontFamily,
       fontSize = fontSize,
       insertSpaces = insertSpaces,

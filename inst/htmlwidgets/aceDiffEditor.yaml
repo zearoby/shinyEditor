@@ -4,7 +4,7 @@ dependencies:
    src: htmlwidgets
    stylesheet:
       - aceEditor.css
-      - lib/aceSpellChecker.css
+      - lib/spellChecker.css
    script:
       - lib/ace/ace.js
       - lib/ace/ext-diff.js

@@ -1,7 +1,6 @@
 // The code refer to https://github.com/swenson/ace_spellCheck_js/blob/master/spellcheck_ace.js
 
 // initialize Typo.js dict object
-var dictionary = new Typo("en_US", en_US_aff, en_US_dic);
 
 
 
@@ -13,6 +12,7 @@ var dictionary = new Typo("en_US", en_US_aff, en_US_dic);
          this.contents_modified = true;
          this.currently_spellchecking = false;
          this.markers_present = [];
+         this.dictionary = new Typo("en_US", en_US_aff, en_US_dic);
 
          if (editor.enableSpellCheck == true) {
             this.enableSpellCheck();
@@ -28,7 +28,7 @@ var dictionary = new Typo("en_US", en_US_aff, en_US_dic);
              const x = words[word] + "";
              const camelCaseWords = x.match(/[a-z]+|[A-Z][a-z]*/g) || [x];
              for (const checkWord of camelCaseWords) {
-                 if (checkWord.length > 0 && !dictionary.check(checkWord)) {
+                 if (checkWord.length > 0 && !this.dictionary.check(checkWord)) {
                      bads[bads.length] = [i, i + checkWord.length];
                  }
                  i += checkWord.length;
@@ -42,7 +42,7 @@ var dictionary = new Typo("en_US", en_US_aff, en_US_dic);
       // Spell check the Ace editor contents.
       spellCheck() {
         // Wait for the dictionary to be loaded.
-         if (dictionary == null) {
+         if (this.dictionary == null) {
             return;
          }
 
@@ -114,9 +114,9 @@ var dictionary = new Typo("en_US", en_US_aff, en_US_dic);
       }
 
       suggest_word_for_misspelled(misspelledWord) {
-         const is_spelled_correctly = dictionary.check(misspelledWord);
+         const is_spelled_correctly = this.dictionary.check(misspelledWord);
 
-         const array_of_suggestions = dictionary.suggest(misspelledWord);
+         const array_of_suggestions = this.dictionary.suggest(misspelledWord);
          if (is_spelled_correctly || array_of_suggestions.length === 0) { return false }
          return array_of_suggestions
       }

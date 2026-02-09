@@ -52,12 +52,12 @@ function createStatusBar(editor) {
 
    const words_div = document.createElement('span');
    const lines_div = document.createElement('span');
-   lines_div.textContent = `Lines: ${editor.getValue().split(/\r\n|\n|\r/).length}`;
-   words_div.textContent = `Words: ${editor.getValue().match(/\w+/g).length}`;
+   lines_div.textContent = `Lines: ${editor.getValue().split(/\r\n|\n|\r/)?.length}`;
+   words_div.textContent = `Words: ${editor.getValue().match(/\w+/g)?.length}`;
    editor.onDidChangeModelContent((event) => {
       const text = editor.getValue();
-      lines_div.textContent = `Lines: ${text.split(/\r\n|\n|\r/).length}`;
-      words_div.textContent = `Words: ${text.match(/\w+/g).length}`;
+      lines_div.textContent = `Lines: ${text.split(/\r\n|\n|\r/)?.length}`;
+      words_div.textContent = `Words: ${text.match(/\w+/g)?.length}`;
    })
 
    const spacer = document.createElement('div');
@@ -99,7 +99,7 @@ function initialMonacoEditor(el, x) {
       if (monacoEditorOptions.includes(key)) {
          editor_setting[key] = x[key];
       }
-      else if (key !== "showStatusBar") {
+      else if (!["enableSpellCheck", "showStatusBar"].includes(key)) {
          unrecognized_arguments.push(key);
       }
    }
@@ -116,6 +116,9 @@ function initialMonacoEditor(el, x) {
       if (x.showStatusBar == true) {
          el.appendChild(createStatusBar(editor));
       }
+      if (x.enableSpellCheck == true) {
+         editor.enableSpellCheck = x.enableSpellCheck;
+      }
 
       addAction(editor);
       if (HTMLWidgets.shinyMode) {
@@ -125,18 +128,12 @@ function initialMonacoEditor(el, x) {
          Shiny.setInputValue(editor.id + "_selected_text", "", {priority: "event"});
          Shiny.setInputValue(editor.id + "_ready", true, {priority: "event"});
       }
+      editor.spellChecker = new MonacoSpellChecker(editor);
       editor.focus();
       return editor;
    }
 
-   if (typeof monaco === "undefined") {
-      require(['vs/editor/editor.main'], function () {
-         return initEditor();
-      });
-   }
-   else {
-      return initEditor();
-   }
+   return initEditor();
 }
 
 function initOnDidChangeEvent(editor) {
@@ -217,6 +214,18 @@ function addAction(editor) {
          editor.updateOptions({
             minimap: {enabled: !editor.getOption(monaco.editor.EditorOption.minimap).enabled}
          });
+      }
+   });
+   editor.addAction({
+      id: "spell_check",
+      label: "Toggle Spell Check",
+      run: function () {
+         if (editor.enableSpellCheck) {
+            editor.spellChecker.disableSpellCheck();
+         }
+         else {
+            editor.spellChecker.enableSpellCheck();
+         }
       }
    });
 }

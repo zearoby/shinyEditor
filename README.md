@@ -2,15 +2,15 @@
 
 The `shinyEditor` package enables Shiny application developers to use the [Ace text editor](https://ace.c9.io/#nav=about) and [monaco editor](https://github.com/microsoft/monaco-editor) in their applications. All current modes (languages) and themes are supported in this package. The mode, theme, and current text can be defined when the element is initialized in `ui.R` or afterwards using the `shinyjs::runjs()` function. The editor registers itself as a reactive Shiny input, so the current value of the editor can easily be pulled from `server.R` using `shinyEditor::getAceValue(outputId)`.
 
--   The `shinyEditor` contains latest `ace` source code `v1.43.6`, and its contains below features:
+-   The version of `ace` editor is `v1.43.6`
+-   The version of `monaco` editor is `v0.55.1`
+-   They contain below features:
 
 #### -\> Text Comparison
 
-#### -\> Spell Checking (Enable in Ace Editor)
+#### -\> Spell Checking
 
 #### -\> Extra SAS Code Highlight Mode (Enable in Ace Editor)
-
--   The `shinyEditor` contains latest `monaco editor` source code `v0.55.1`, and its still under development.
 
 ## Installing
 

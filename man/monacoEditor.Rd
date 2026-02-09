@@ -6,6 +6,7 @@
 \usage{
 monacoEditor(
   value,
+  enableSpellCheck = FALSE,
   fontFamily = "Consolas",
   fontSize = 16,
   insertSpaces = TRUE,
@@ -29,6 +30,8 @@ monacoEditor(
 }
 \arguments{
 \item{value}{\link{character}: Set text to editor when initializing}
+
+\item{enableSpellCheck}{\link{logical}: Enable check typo of spelling}
 
 \item{fontFamily}{\link{character}: The font family}
 
