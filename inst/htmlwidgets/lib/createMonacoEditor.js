@@ -219,6 +219,9 @@ function addAction(editor) {
    editor.addAction({
       id: "spell_check",
       label: "Toggle Spell Check",
+      contextMenuGroupId: "navigation",
+      contextMenuOrder: 1,
+      keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyE],
       run: function () {
          if (editor.enableSpellCheck) {
             editor.spellChecker.disableSpellCheck();
