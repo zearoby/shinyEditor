@@ -34,7 +34,6 @@
 
          const model = this.editor.getModel();
          if (!model) return;
-         const visibleRanges = this.editor.getVisibleRanges();
          const lines = this.editor.getModel().getLineCount();
          const newDecorations = [];
          const WORD = /[a-z]+|[A-Z][a-z]*/g;
